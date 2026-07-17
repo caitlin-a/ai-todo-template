@@ -1,0 +1,23 @@
+---
+description: Budget gate — Auto runs todo skills; premium /jot only; Composer → Auto
+alwaysApply: true
+---
+
+# Model gate (ai-todo-template)
+
+**Auto** runs todo skills and ADO MCP. **Premium models (Opus, Sonnet, etc.) run `/jot` only** — nothing else. **Composer** — switch to **Auto** for todo skills (same as premium for mutations). No Task delegation on premium (too expensive).
+
+| Auto | Composer | Premium (Opus, Sonnet, …) |
+|---|---|---|
+| All skills + ADO MCP | Switch to **Auto** for skills | **`/jot` only** — append `02-inbox.md` |
+| Edit list, sync, plan | Read-only Q&A OK | **Do not** edit todos, done log, goals, `.cursor/sync-state` |
+| | | **Do not** call ADO MCP |
+| | | **Do not** spin Task subagents for todo work |
+
+If the user asks for `/dawn`, `/tisdone`, `/todo`, `/synctodos`, `/mondayblues`, or any list change on **Composer** or a **premium** model:
+
+> Switch to **Auto** for todo skills — or `/jot` to capture and file later (premium only).
+
+Premium models may **read** files to answer questions (“what’s on my list?”) but must not run skills or mutate repo files except `/jot`. Composer may read and summarise — no list edits.
+
+Git: commit + push on `/dawn` only per `routing/flow.md` § Auto-commit — other skills do not commit.
