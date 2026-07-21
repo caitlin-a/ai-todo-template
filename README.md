@@ -24,14 +24,13 @@ of order (no promises).
 
 ## Quick start
 
-Hit *Use this template* at the top of the GitHub page to grab your own copy, then run
-`bash .cursor/dev/setup.sh` (or just tell your agent to). That sets up your local ADO config
-from the `*.example` files - safe to re-run, it won't clobber anything you've already got. Open
-the folder in Cursor and you're off.
+Hit *Use this template* at the top of the GitHub page to grab your own copy, open it in Cursor,
+and you're off - no setup step, the todo files ship ready to go. (Want it wired to an Azure
+DevOps board? That bit's optional - see
+[Syncing with a work board](#syncing-with-a-work-board-optional).)
 
-The todo files ship empty and fill in as you go. They're tracked (not git-ignored), so if you'd
-rather your list wasn't public, make your copy of the repo private - that's what I do (more in
-[Privacy](#privacy)).
+Those files are tracked, not git-ignored - so if you'd rather your list wasn't public, make your
+copy of the repo private. That's what I do (more in [Privacy](#privacy)).
 
 ## The actual todo files
 > ship empty in the repo; they fill in as you use it
@@ -78,11 +77,11 @@ framework every time (yep, the token budget again).
 | File                                                             | What it's for                           |
 | ---------------------------------------------------------------- | --------------------------------------- |
 | [.cursor/routing.md](./.cursor/routing.md)                       | Index - which subfiles each skill reads |
-| [.cursor/ado-config.example.md](./.cursor/ado-config.example.md) | ADO index - slices in [.cursor/ado/](./.cursor/ado/) |
+| [.cursor/ado-config.md](./.cursor/ado-config.md)                | ADO on/off + index - slices in [.cursor/ado/](./.cursor/ado/) |
 | [.cursor/AGENTS.md](./.cursor/AGENTS.md)                         | Short agent entry point                 |
 | [.cursor/dev/](./.cursor/dev/)                                   | Bootstrap + regression (*humans only*)  |
 
-*Regression tests:* `bash .cursor/dev/test-regression.sh` (run after `setup.sh`). Worth doing
+*Regression tests:* `bash .cursor/dev/test-regression.sh` (run from the repo root). Worth doing
 if you adapt a skill or fiddle with the routing - they're quick wiring checks that flag when
 you've accidentally broken how the skills hang together, before you find out the hard way.
 
@@ -91,10 +90,12 @@ you've accidentally broken how the skills hang together, before you find out the
 ADO's off by default - the list works completely fine without it. To switch it on:
 
 1. Connect an Azure DevOps MCP in Cursor.
-2. Fill in your details in [`.cursor/ado/target.example.md`](./.cursor/ado/target.example.md) -
-   `setup.sh` copies it to `.cursor/ado/target.md` (git-ignored) for you.
-3. Set `enabled: true` in `.cursor/ado-config.md` (copied from
-   [ado-config.example.md](./.cursor/ado-config.example.md)).
+2. Copy [`.cursor/ado/target.example.md`](./.cursor/ado/target.example.md) to
+   `.cursor/ado/target.md` and fill in your org, team, area and assignee. (`target.md` is the
+   one git-ignored file - it's got your details in it, so it never gets committed.)
+3. Set `enabled: true` in [`.cursor/ado-config.md`](./.cursor/ado-config.md).
+
+That's it - the skills pick ADO up from your next `/dawn`, `/synctodos` and so on.
 
 Not on ADO? (Jira, Trello, Linear, whatever) - the sync layer is just markdown instructions in
 [`.cursor/ado/`](./.cursor/ado/) pointing at an MCP's tools. So in theory you can point those
@@ -105,9 +106,9 @@ files at your own tracker's MCP instead. But I will leave it to you to adapt.
 The todo files live in the repo and are tracked - *not* git-ignored. So if you don't want your
 list out in the open, make your copy of the repo private (that's what I do).
 
-The one thing that stays out of git is your filled-in ADO config (`.cursor/ado-config.md` and
-`.cursor/ado/target.md`) - it holds your org and assignee details. `setup.sh` builds those from
-the tracked `.example` files, so you always start from placeholders.
+The one thing that stays out of git is `.cursor/ado/target.md` - the ADO file with your org and
+assignee details in it. You only create it (from the tracked `target.example.md`) if you turn
+ADO on, per [Syncing with a work board](#syncing-with-a-work-board-optional).
 
 ## Things I'd like to add
 

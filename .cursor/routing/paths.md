@@ -12,7 +12,7 @@
 | `README.md` | Human onboarding |
 | `.gitignore` | Repo ignore rules |
 
-Agent/framework files live under **`.cursor/`** only (skills, routing, ADO, `sync-state.md`, `dev/setup.sh`).
+Agent/framework files live under **`.cursor/`** only (skills, routing, ADO, `sync-state.md`, `dev/`).
 
 ## Agent state
 

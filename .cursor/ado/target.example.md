@@ -1,7 +1,7 @@
 # ADO target (example — copy to `target.md`)
 
-`bash .cursor/dev/setup.sh` copies this to `ado/target.md` (git-ignored). Fill in your
-Azure DevOps details there — placeholders in `<angle brackets>`.
+To enable ADO, copy this file to `.cursor/ado/target.md` (git-ignored) and fill in your
+Azure DevOps details — placeholders in `<angle brackets>`.
 
 | Setting | Value |
 |---|---|

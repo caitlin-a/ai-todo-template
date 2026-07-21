@@ -1,10 +1,9 @@
 # This repo's whole point is the .cursor/ framework, but Cursor dirs are often
-# ignored globally. Re-include it here, then re-ignore the ADO config below.
+# ignored globally. Re-include it here, then re-ignore the one ADO file below.
 !.cursor/
 
-# Your filled-in ADO config holds your org / assignee details, so it stays out of
-# git — `bash .cursor/dev/setup.sh` generates both from the tracked .example files.
-# Everything else (your todo files) IS tracked: make your repo private if you want
-# your list kept private.
-.cursor/ado-config.md
+# `.cursor/ado/target.md` is the only file with your details in it (org, assignee,
+# email), so it stays out of git. You create it from ado/target.example.md only if
+# you turn ADO on. Everything else — including your todo files — IS tracked: make
+# your repo private if you want your list kept private.
 .cursor/ado/target.md

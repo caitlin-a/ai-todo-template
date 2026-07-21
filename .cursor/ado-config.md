@@ -1,8 +1,9 @@
-# ADO — index (example — copy to `ado-config.md`)
+# ADO — index
 
-`bash .cursor/dev/setup.sh` copies this to `ado-config.md` (git-ignored). Set
-`enabled: true` there once your Azure DevOps MCP is connected and [ado/target.md](./ado/target.md)
-is filled in.
+ADO is **off** by default (`enabled: false` below) — the todo list runs fine without it.
+To turn it on: set `enabled: true`, copy [ado/target.example.md](./ado/target.example.md) to
+`ado/target.md` and fill it in, and connect your Azure DevOps MCP. (See the README's
+"Syncing with a work board" section for the walkthrough.)
 
 **Do not read every file below.** Each skill lists exactly which `ado/` subfiles to load.
 

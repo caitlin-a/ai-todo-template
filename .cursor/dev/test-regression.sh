@@ -18,7 +18,7 @@ grep -q 'done-log date resolution' .cursor/ado/done-dates.md && ok "ADO date res
 
 # --- ADO optional + split ---
 if grep -q '## Enabled' .cursor/ado-config.md && \
-   grep -q 'enabled.*false' .cursor/ado-config.example.md && \
+   grep -q 'enabled.*false' .cursor/ado-config.md && \
    grep -q 'Skill → read map' .cursor/ado-config.md && \
    [[ -f .cursor/ado/sync.md ]] && \
    [[ -f .cursor/ado/create.md ]] && \
@@ -34,11 +34,12 @@ else
   bad "ADO optional / split wiring incomplete"
 fi
 
-[[ -f .cursor/ado-config.example.md ]] && ok "ado-config.example.md present" || bad "ado-config.example.md missing"
-[[ -f .cursor/dev/bootstrap/01-todos.md ]] && ok "dev/bootstrap present" || bad "dev/bootstrap missing"
+[[ -f .cursor/ado/target.example.md ]] && ok "ado/target.example.md present" || bad "ado/target.example.md missing"
+[[ -f 01-todos.md && -f 02-inbox.md && -f 04-goals.md && -f .cursor/sync-state.md ]] && ok "todo working files tracked" || bad "todo working files missing"
+[[ ! -f .cursor/dev/setup.sh ]] && ok "setup.sh removed (files ship tracked)" || bad "setup.sh still exists"
+[[ ! -d .cursor/dev/bootstrap ]] && ok "dev/bootstrap removed" || bad "dev/bootstrap still exists"
 [[ ! -d templates ]] && ok "templates/ removed" || bad "templates/ still exists"
 [[ ! -f scripts/publish-framework.sh ]] && ok "publish-framework.sh removed" || bad "publish-framework.sh still exists"
-[[ -x .cursor/dev/setup.sh ]] && ok "setup.sh executable" || note "setup.sh not executable (chmod +x .cursor/dev/setup.sh)"
 
 # --- mondayblues inbox ---
 grep -q "triage like \`/todo\`" .cursor/skills/mondayblues/SKILL.md && bad "mondayblues inbox triage" || ok "mondayblues defers inbox"
