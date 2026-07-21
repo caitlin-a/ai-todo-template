@@ -7,6 +7,8 @@ alwaysApply: true
 
 **Auto** runs todo skills and ADO MCP. **Premium models (Opus, Sonnet, etc.) run `/jot` only** — nothing else. **Composer** — switch to **Auto** for todo skills (same as premium for mutations). No Task delegation on premium (too expensive).
 
+`/jot` is the premium exception because it's *cheap* (a single append to `02-inbox.md`), not because it needs a strong model — the gate is about cost, not capability.
+
 | Auto | Composer | Premium (Opus, Sonnet, …) |
 |---|---|---|
 | All skills + ADO MCP | Switch to **Auto** for skills | **`/jot` only** — append `02-inbox.md` |
