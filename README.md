@@ -6,7 +6,7 @@ live there too. And then I started making skills...
 Copy, steal, adapt, use this AI todo system to attempt to wrangle your brain into some sense
 of order (no promises).
 
-*My favourite bits:*
+**My favourite bits:**
 
 - Skills for getting you started in the morning + keeping you focused during the day
 - Manually edit (how retro) *or* use skills to add new things to the pile of stuff
@@ -108,7 +108,6 @@ gets committed. Handy if you're working in public repos - in a private one, loos
 ## Things I'd like to add
 
 - Claude + Cursor agnostic
-- Making ADO a clean, fully removable add-on rather than something baked through
 - A way to add to the inbox from email/WhatsApp/Teams (ambitious, given I *really* don't want
   to build an app)
 
