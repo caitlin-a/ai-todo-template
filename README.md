@@ -25,14 +25,16 @@ of order (no promises).
 ## Quick start
 
 Hit *Use this template* at the top of the GitHub page to grab your own copy, then run
-`bash .cursor/dev/setup.sh` (or just tell your agent to). That builds your local working files
-from the stubs and `*.example` configs - safe to re-run, it won't clobber anything you've
-already got. Open the folder in Cursor and you're off.
+`bash .cursor/dev/setup.sh` (or just tell your agent to). That sets up your local ADO config
+from the `*.example` files - safe to re-run, it won't clobber anything you've already got. Open
+the folder in Cursor and you're off.
 
-Your tasks, goals, and board details are all git-ignored, so nothing personal ever leaks out.
+The todo files ship empty and fill in as you go. They're tracked (not git-ignored), so if you'd
+rather your list wasn't public, make your copy of the repo private - that's what I do (more in
+[Privacy](#privacy)).
 
 ## The actual todo files
-> `setup.sh` makes these locally, git-ignored
+> ship empty in the repo; they fill in as you use it
 
 | File           | What it's for                                                |
 | -------------- | ------------------------------------------------------------ |
@@ -98,12 +100,14 @@ Not on ADO? (Jira, Trello, Linear, whatever) - the sync layer is just markdown i
 [`.cursor/ado/`](./.cursor/ado/) pointing at an MCP's tools. So in theory you can point those
 files at your own tracker's MCP instead. But I will leave it to you to adapt.
 
-## What's git-ignored
+## Privacy
 
-The live list, inbox, goals, wins log, sync state, and work board config are all ignored (see
-`.gitignore`). So nothing you type into your tasks - or your board settings - ever
-gets committed. Handy if you're working in public repos - in a private one, loosen the
-[.gitignore](./.gitignore) if you'd rather keep everything in the repo.
+The todo files live in the repo and are tracked - *not* git-ignored. So if you don't want your
+list out in the open, make your copy of the repo private (that's what I do).
+
+The one thing that stays out of git is your filled-in ADO config (`.cursor/ado-config.md` and
+`.cursor/ado/target.md`) - it holds your org and assignee details. `setup.sh` builds those from
+the tracked `.example` files, so you always start from placeholders.
 
 ## Things I'd like to add
 

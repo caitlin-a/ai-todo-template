@@ -1,18 +1,10 @@
 # This repo's whole point is the .cursor/ framework, but Cursor dirs are often
-# ignored globally. Re-include it here, then re-ignore the live-data files below.
+# ignored globally. Re-include it here, then re-ignore the ADO config below.
 !.cursor/
 
-# Live data — generated locally by `bash .cursor/dev/setup.sh`. Never commit these:
-# they hold your actual tasks, goals, and ADO details. Leading `/` anchors to the
-# repo root so the stub copies under .cursor/dev/bootstrap/ are still tracked.
-/01-todos.md
-/02-inbox.md
-/04-goals.md
-/05-done.csv
-.cursor/sync-state.md
+# Your filled-in ADO config holds your org / assignee details, so it stays out of
+# git — `bash .cursor/dev/setup.sh` generates both from the tracked .example files.
+# Everything else (your todo files) IS tracked: make your repo private if you want
+# your list kept private.
 .cursor/ado-config.md
 .cursor/ado/target.md
-
-# Personal project detail under 03-projects/ (keep the README template)
-03-projects/*.md
-!03-projects/README.md
