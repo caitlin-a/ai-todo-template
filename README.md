@@ -110,7 +110,3 @@ gets committed. Handy if you're working in public repos - in a private one, loos
 - Claude + Cursor agnostic
 - A way to add to the inbox from email/WhatsApp/Teams (ambitious, given I *really* don't want
   to build an app)
-
-## License
-
-[MIT](./LICENSE) - copy, steal, adapt, use.
